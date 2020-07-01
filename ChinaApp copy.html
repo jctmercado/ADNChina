@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['ID', 'Rank by Downloads', 'Penetration Rate', 'Centralized','Downloads'],
+        ['Philippines',    1,   0.0046,  'Decentralized',  5000],
+        ['Kyrgyztan',      2,   0.153,  'Centralized',   10000],
+        ['Hong Kong',      3,   1.84,   'Centralized',   10000],
+        ['Kuwait',         4,   1.17,     'Unknown',     50000],
+        ['Israel',         5,   23.1,   'Decentralized',  100000],
+        ['Bahrain',        6,   5.88,   'Centralized',    100000],
+        ['Malaysia',       7,   0.31,   'Decentralized',    100000],
+        ['Iran',    8,              0.12,      'Decentralized',    100000],
+        ['Vietnam',    9,               0.1,      'Centralized',   100000],
+        ['UAE',    10,              3.59,      'Decentralized',  355000],
+        ['Thailand',    11,              0.51,      'Unknown',  355000],
+        ['Jordan',    12,              5.89,      'Unknown',  600000],
+        ['Saudi Arabia',    13,              4.27,      'Unknown',  1100000],
+        ['South Korea',    14,              3.16,      'Unknown',  1100000],
+        ['Indonesia',    15,              0.52,      'Centralized',  1427000],
+        ['Singapore',    16,              34.19,      'Centralized',  2000000],
+        ['Japan',    17,              2.14,      'Decentralized',  2700000],
+        ['Turkey',    18,              5.93,      'Centralized',  5000000],
+        ['India',    19,              8.28,      'Centralized',  114285000],
+        ['China', 20, 83.38, 'Centralized', 1200000000]
+      ]);
+
+      var options = {
+        title: 'Contract Tracing Apps in Asia ' +
+               'by Downloads and Penetration Rate',
+        hAxis: {title: 'Rank by Downloads', ticks: [5,10,15,20,23]},
+        vAxis: {title: 'Penetration Rate', minValue: -1},
+        bubble: {
+            textStyle: {
+                fontSize: 11,
+                auraColor: 'none',
+                color: 'white',
+            }
+        },
+        explorer: {
+            maxZoomOut: 1.5,
+            maxZoomIn: 0.75
+        }
+
+    };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="series_chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
