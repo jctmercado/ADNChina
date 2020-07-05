@@ -8,7 +8,7 @@
     function drawChart() {
 
       var data = google.visualization.arrayToDataTable([
-        ['ID', 'Rank by Downloads', 'Penetration Rate', 'Centralized','Downloads'],
+        ['ID', 'Rank by Downloads', 'Penetration Rate', 'Data Storage','Number of Downloads'],
         ['Philippines',    1,   0.0046,  'Decentralized',  5000],
         ['Kyrgyztan',      2,   0.153,  'Centralized',   10000],
         ['Hong Kong',      3,   1.84,   'Centralized',   10000],
@@ -43,10 +43,17 @@
                 color: 'white',
             }
         },
+        sizeAxis: {
+          maxSize: 75,
+          minSize: 3},
         explorer: {
             maxZoomOut: 1.5,
             maxZoomIn: 0.75
-        }
+        },
+        animation: {
+          duration: 2000,
+          easing: 'out',
+          startup: true}
 
     };
 
